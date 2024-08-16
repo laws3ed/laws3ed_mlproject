@@ -47,7 +47,7 @@ class DataTransformation:
             
             int_features_pipeline = Pipeline(
                 steps = [
-                    ('step1_impute_missing_values', SimpleImputer(strategy='median'))
+                    ('step1_impute_missing_values', SimpleImputer(strategy='most_frequent'))
                 ]
             )
             

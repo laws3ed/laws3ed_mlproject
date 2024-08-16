@@ -16,4 +16,3 @@ def save_to_pkl_file(file_path, obj):
             dill.dump(obj, file_obj)
     except Exception as e:
         raise CustomException(e, sys)
-
