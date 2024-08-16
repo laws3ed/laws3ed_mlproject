@@ -3,8 +3,8 @@ import sys
 import numpy as np
 import pandas as pd
 
-from logger import logging
-from exception import CustomException
+from src.logger import logging
+from src.exception import CustomException
 
 import dill
 
@@ -14,5 +14,13 @@ def save_to_pkl_file(file_path, obj):
         os.makedirs(dir_path, exist_ok=True)
         with open(file_path, 'wb') as file_obj:
             dill.dump(obj, file_obj)
+    except Exception as e:
+        raise CustomException(e, sys)
+
+def load_object(file_path):
+    try:
+        with open(file_path, "rb") as file_obj:
+            return pickle.load(file_obj)
+
     except Exception as e:
         raise CustomException(e, sys)

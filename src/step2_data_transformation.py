@@ -11,9 +11,9 @@ from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import StandardScaler
 from sklearn.impute import SimpleImputer
 
-from exception import CustomException
-from logger import logging
-from utils import save_to_pkl_file
+from src.exception import CustomException
+from src.logger import logging
+from src.utils import save_to_pkl_file
 
 @dataclass
 class DataTransformationConfig:

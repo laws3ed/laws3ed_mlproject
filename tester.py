@@ -1,8 +1,8 @@
-from utils import save_to_pkl_file
-from step1_data_ingestion import DataIngestion
-from step2_data_transformation import DataTransformation
-from step3_model_training import ModelTrainer
-from logger import logging
+from src.utils import save_to_pkl_file
+from src.step1_data_ingestion import DataIngestion
+from src.step2_data_transformation import DataTransformation
+from src.step3_model_training import ModelTrainer
+from src.logger import logging
 
 data_ingestion = DataIngestion()
 _, train_data, test_data = data_ingestion.execute_data_ingestion()

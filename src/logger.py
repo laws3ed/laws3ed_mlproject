@@ -23,7 +23,7 @@ console.setFormatter(formatter)
 logging.getLogger('').addHandler(console)
 
 
-# Test the logger
+#Test the logger
 #logging.info('Logging to the root logger...')
 #logger1 = logging.getLogger('Logging specific areas in the application app.mlstep1...')
 #logger2 = logging.getLogger('Logging specific areas in the application app.mlstep2...')

@@ -10,9 +10,9 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import GridSearchCV
 
-from exception import CustomException
-from logger import logging
-from utils import save_to_pkl_file
+from src.exception import CustomException
+from src.logger import logging
+from src.utils import save_to_pkl_file
 
 @dataclass
 class ModelTrainerConfig:

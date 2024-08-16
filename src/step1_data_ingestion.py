@@ -4,8 +4,8 @@ import pandas as pd
 from dataclasses import dataclass
 from sklearn.model_selection import train_test_split
 
-from exception import CustomException
-from logger import logging
+from src.exception import CustomException
+from src.logger import logging
 
 @dataclass
 class DataIngestionConfig:
@@ -39,9 +39,3 @@ class DataIngestion:
             )
         except Exception as e:
             raise CustomException(e, sys)
-
-# Test data ingestion step
-if __name__ == "__main__":
-    di= DataIngestion()
-    di.execute_data_ingestion()
-
