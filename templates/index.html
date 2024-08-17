@@ -1,1 +1,157 @@
-<h1>Welcome to the home page</h1>
+<html>
+<body>
+    <div class="login">
+       <h1>Online Shoppers Intention Prediction</h1>
+       <form action="{{ url_for('prediction_endpoint')}}" method="post">
+        <div class="mb-3">
+            <label class="form-label">Administrative</label>
+            <input class="form-control" type="number" name="Administrative"
+                placeholder="Select Administrative value" min='0' max='26' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Administrative Duration</label>
+            <input class="form-control" type="number" name="Administrative_Duration"
+                placeholder="Enter Administrative Duration value" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Informational</label>
+            <input class="form-control" type="number" name="Informational"
+                placeholder="Select Informational value" min='0' max='13' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Informational Duration</label>
+            <input class="form-control" type="number" name="Informational_Duration"
+                placeholder="Enter Informational Duration value" />
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label">Product Related</label>
+            <input class="form-control" type="number" name="Product_Related"
+                placeholder="Select Product Related value" min='0' max='705' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Product Related Duration</label>
+            <input class="form-control" type="number" name="ProductRelated_Duration"
+                placeholder="Enter Product Related Duration value" />
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label">Bounce Rates</label>
+            <input class="form-control" type="number" name="BounceRates"
+                placeholder="Enter Bounce Rates value" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Exit Rates</label>
+            <input class="form-control" type="number" name="ExitRates"
+                placeholder="Enter Exit Rates value" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Page Values</label>
+            <input class="form-control" type="number" name="PageValues"
+                placeholder="Enter Page Values Duration value" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Special Day</label>
+            <input class="form-control" type="number" name="SpecialDay"
+                placeholder="Enter Special Day value" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Month</label>
+            <select class="form-control" name="Month" placeholder="Select Month" required>
+                <option class="placeholder" selected disabled value="">Select Month</option>
+                <option value="Jan">
+                    Jan
+                </option>
+                <option value="Feb">
+                    Feb
+                </option>
+                <option value="Mar">
+                    Mar
+                </option>
+                <option value="Apr">
+                    Apr
+                </option>
+                <option value="May">
+                    May
+                </option>
+                <option value="Jun">
+                    Jun
+                </option>
+                <option value="Jul">
+                    Jul
+                </option>
+                <option value="Aug">
+                    Aug
+                </option>
+                <option value="Sep">
+                    Sep
+                </option>
+                <option value="Oct">
+                    Oct
+                </option>
+                <option value="Nov">
+                    Nov
+                </option>
+                <option value="Dec">
+                    Dec
+                </option>
+            </select>
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label">Operating Systems</label>
+            <input class="form-control" type="number" name="OperatingSystems"
+                placeholder="Select Operating Systems value" min='1' max='13' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Browser</label>
+            <input class="form-control" type="number" name="Browser"
+                placeholder="Select Browser value" min='1' max='8' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Region</label>
+            <input class="form-control" type="number" name="Region"
+                placeholder="Select Region value" min='1' max='9' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Traffic Type</label>
+            <input class="form-control" type="number" name="TrafficType"
+                placeholder="Select Traffic Type value" min='1' max='20' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Visitor Type</label>
+            <select class="form-control" name="VisitorType" placeholder="Select Visitor Type" required>
+                <option class="placeholder" selected disabled value="">Select Visitor Type</option>
+                <option value="New_Visitor">
+                    New Visitor
+                </option>
+                <option value="Other">
+                    Other
+                </option>
+                <option value="Returning_Visitor">
+                    Returning Visitor
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Weekend</label>
+            <select class="form-control" name="Weekend" placeholder="Weekend" required>
+                <option class="placeholder" selected disabled value="">Weekend</option>
+                <option value="False">
+                    False
+                </option>
+                <option value="True">
+                    True
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict Online Shopper Intention" required />
+        </div>
+    </form>
+    <h2>
+       The prediction is {{results}}
+    </h2>
+   <body>
+</html>

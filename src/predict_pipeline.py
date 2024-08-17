@@ -1,3 +1,4 @@
+import os
 import sys
 import pandas as pd
 from src.exception import CustomException
@@ -9,8 +10,8 @@ class PredictPipeline:
 
     def predict(self,features):
         try:
-            model_path=os.path.join("artifacts","model.pkl")
-            preprocessor_path=os.path.join('artifacts','preprocessor.pkl')
+            model_path=os.path.join("model","model.pkl")
+            preprocessor_path=os.path.join('preprocessor','preprocessor.pkl')
             print("Before Loading")
             model=load_object(file_path=model_path)
             preprocessor=load_object(file_path=preprocessor_path)
@@ -22,43 +23,67 @@ class PredictPipeline:
         except Exception as e:
             raise CustomException(e,sys)
 
-class CustomData:
+class FormData:
     def __init__(  self,
-        gender: str,
-        race_ethnicity: str,
-        parental_level_of_education,
-        lunch: str,
-        test_preparation_course: str,
-        reading_score: int,
-        writing_score: int):
+        Administrative: int,
+        Administrative_Duration: float,
+        Informational: int,
+        Informational_Duration: float,
+        ProductRelated: int,
+        ProductRelated_Duration: float,
+        BounceRates: float,
+        ExitRates: float,
+        PageValues: float,
+        SpecialDay: float,
+        Month: str,
+        OperatingSystems: int,
+        Browser: int,
+        Region: int,
+        TrafficType: int,
+        VisitorType: str,
+        Weekend: bool):
 
-        self.gender = gender
-
-        self.race_ethnicity = race_ethnicity
-
-        self.parental_level_of_education = parental_level_of_education
-
-        self.lunch = lunch
-
-        self.test_preparation_course = test_preparation_course
-
-        self.reading_score = reading_score
-
-        self.writing_score = writing_score
+        self.Administrative = Administrative
+        self.Administrative_Duration = Administrative_Duration
+        self.Informational = Informational
+        self.Informational_Duration = Informational_Duration
+        self.ProductRelated = ProductRelated
+        self.ProductRelated_Duration = ProductRelated_Duration
+        self.BounceRates = BounceRates
+        self.ExitRates = ExitRates
+        self.PageValues = PageValues
+        self.SpecialDay = SpecialDay
+        self.Month = Month
+        self.OperatingSystems = OperatingSystems
+        self.Browser = Browser
+        self.Region = Region
+        self.TrafficType = TrafficType
+        self.VisitorType = VisitorType
+        self.Weekend = Weekend
 
     def get_data_as_data_frame(self):
         try:
-            custom_data_input_dict = {
-                "gender": [self.gender],
-                "race_ethnicity": [self.race_ethnicity],
-                "parental_level_of_education": [self.parental_level_of_education],
-                "lunch": [self.lunch],
-                "test_preparation_course": [self.test_preparation_course],
-                "reading_score": [self.reading_score],
-                "writing_score": [self.writing_score],
+            input_data_dict = {
+                "Administrative": [self.Administrative],
+                "Administrative_Duration": [self.Administrative_Duration],
+                "Informational": [self.Informational],
+                "Informational_Duration": [self.Informational_Duration],
+                "ProductRelated": [self.ProductRelated],
+                "ProductRelated_Duration": [self.ProductRelated_Duration],
+                "BounceRates": [self.BounceRates],
+                "ExitRates": [self.ExitRates],
+                "PageValues": [self.PageValues],
+                "SpecialDay": [self.SpecialDay],
+                "Month": [self.Month],
+                "OperatingSystems": [self.OperatingSystems],
+                "Browser": [self.Browser],
+                "Region": [self.Region],
+                "TrafficType": [self.TrafficType],
+                "VisitorType": [self.VisitorType],
+                "Weekend": [self.Weekend]
             }
 
-            return pd.DataFrame(custom_data_input_dict)
+            return pd.DataFrame(input_data_dict)
 
         except Exception as e:
             raise CustomException(e, sys)

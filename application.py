@@ -3,42 +3,46 @@ import numpy as np
 import pandas as pd
 
 from sklearn.preprocessing import StandardScaler
-from src.predict_pipeline import CustomData, PredictPipeline
+from src.predict_pipeline import FormData, PredictPipeline
 
 application=Flask(__name__)
 
 app=application
-
-## Route for a home page
 
 @app.route('/')
 def index():
     return render_template('index.html') 
 
 @app.route('/predictdata',methods=['GET','POST'])
-def predict_datapoint():
+def prediction_endpoint():
     if request.method=='GET':
-        return render_template('home.html')
+        return render_template('index.html')
     else:
-        data=CustomData(
-            gender=request.form.get('gender'),
-            race_ethnicity=request.form.get('ethnicity'),
-            parental_level_of_education=request.form.get('parental_level_of_education'),
-            lunch=request.form.get('lunch'),
-            test_preparation_course=request.form.get('test_preparation_course'),
-            reading_score=float(request.form.get('writing_score')),
-            writing_score=float(request.form.get('reading_score'))
-
+        data=FormData(
+            Administrative=request.form.get('Administrative'),
+            Administrative_Duration=float(request.form.get('Administrative_Duration')),
+            Informational=request.form.get('Informational'),
+            Informational_Duration=float(request.form.get('Informational_Duration')),
+            ProductRelated=request.form.get('ProductRelated'),
+            ProductRelated_Duration=float(request.form.get('ProductRelated_Duration')),
+            BounceRates=float(request.form.get('BounceRates')),
+            ExitRates=float(request.form.get('ExitRates')),
+            PageValues=float(request.form.get('PageValues')),
+            SpecialDay=float(request.form.get('SpecialDay')),
+            Month=request.form.get('Month'),
+            OperatingSystems=request.form.get('OperatingSystems'),
+            Browser=request.form.get('Browser'),
+            Region=request.form.get('Region'),
+            TrafficType=request.form.get('TrafficType'),
+            VisitorType=request.form.get('VisitorType'),
+            Weekend=bool(request.form.get('Weekend'))
         )
         pred_df=data.get_data_as_data_frame()
         print(pred_df)
-        print("Before Prediction")
 
         predict_pipeline=PredictPipeline()
-        print("Mid Prediction")
         results=predict_pipeline.predict(pred_df)
-        print("after Prediction")
-        return render_template('home.html',results=results[0])
+        return render_template('index.html',results=results[0])
     
 
 if __name__=="__main__":

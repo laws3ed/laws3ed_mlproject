@@ -28,8 +28,8 @@ class DataTransformation:
             float_columns = ['Administrative_Duration', 'Informational_Duration', 'ProductRelated_Duration', 
             'BounceRates', 'ExitRates', 'PageValues', 'SpecialDay']
             int_columns = ['Administrative', 'Informational', 'ProductRelated', 'OperatingSystems', 
-            'Browser', 'Region', 'TrafficType']
-            string_columns = ['Month', 'VisitorType', 'Weekend']
+            'Browser', 'Region', 'TrafficType', 'Weekend']
+            string_columns = ['Month', 'VisitorType']
             
             categorical_features_pipeline = Pipeline(
                 steps = [

@@ -7,6 +7,7 @@ from src.logger import logging
 from src.exception import CustomException
 
 import dill
+import pickle
 
 def save_to_pkl_file(file_path, obj):
     try:
