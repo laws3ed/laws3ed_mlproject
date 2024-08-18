@@ -1,63 +1,70 @@
 <html>
 <body>
-    <div class="login">
-       <h1>Online Shoppers Intention Prediction</h1>
+    <div>
+       <h1>Online Shoppers Intention Prediction Application</h1>
        <form action="{{ url_for('prediction_endpoint')}}" method="post">
-        <div class="mb-3">
-            <label class="form-label">Administrative</label>
+        <div>
+            <label class="form-label">Administrative:</label>&nbsp
             <input class="form-control" type="number" name="Administrative"
-                placeholder="Select Administrative value" min='0' max='26' />
+                placeholder="" min='0' max='26' />
         </div>
-        <div class="mb-3">
-            <label class="form-label">Administrative Duration</label>
-            <input class="form-control" type="number" name="Administrative_Duration"
+        <br>
+        <div>
+            <label class="form-label">Administrative Duration:</label>&nbsp
+            <input class="form-control" type="text" name="Administrative_Duration"
                 placeholder="Enter Administrative Duration value" />
         </div>
-        <div class="mb-3">
-            <label class="form-label">Informational</label>
+        <br>
+        <div>
+            <label class="form-label">Informational:</label>&nbsp
             <input class="form-control" type="number" name="Informational"
-                placeholder="Select Informational value" min='0' max='13' />
+                placeholder="" min='0' max='13' />
         </div>
-        <div class="mb-3">
-            <label class="form-label">Informational Duration</label>
-            <input class="form-control" type="number" name="Informational_Duration"
+        <br>
+        <div>
+            <label class="form-label">Informational Duration:</label>&nbsp
+            <input class="form-control" type="text" name="Informational_Duration"
                 placeholder="Enter Informational Duration value" />
         </div>
-        
-        <div class="mb-3">
-            <label class="form-label">Product Related</label>
+        <br>
+        <div>
+            <label class="form-label">Product Related:</label>&nbsp
             <input class="form-control" type="number" name="Product_Related"
-                placeholder="Select Product Related value" min='0' max='705' />
+                placeholder="" min='0' max='705' />
         </div>
-        <div class="mb-3">
-            <label class="form-label">Product Related Duration</label>
-            <input class="form-control" type="number" name="ProductRelated_Duration"
+        <br>
+        <div>
+            <label class="form-label">Product Related Duration:</label>&nbsp
+            <input class="form-control" type="text" name="ProductRelated_Duration"
                 placeholder="Enter Product Related Duration value" />
         </div>
-        
-        <div class="mb-3">
-            <label class="form-label">Bounce Rates</label>
-            <input class="form-control" type="number" name="BounceRates"
+        <br>
+        <div>
+            <label class="form-label">Bounce Rates:</label>&nbsp
+            <input class="form-control" type="text" name="BounceRates"
                 placeholder="Enter Bounce Rates value" />
         </div>
-        <div class="mb-3">
-            <label class="form-label">Exit Rates</label>
-            <input class="form-control" type="number" name="ExitRates"
+        <br>
+        <div>
+            <label class="form-label">Exit Rates:</label>&nbsp
+            <input class="form-control" type="text" name="ExitRates"
                 placeholder="Enter Exit Rates value" />
         </div>
-        <div class="mb-3">
-            <label class="form-label">Page Values</label>
-            <input class="form-control" type="number" name="PageValues"
+        <br>
+        <div>
+            <label class="form-label">Page Values:</label>&nbsp
+            <input class="form-control" type="text" name="PageValues"
                 placeholder="Enter Page Values Duration value" />
         </div>
-        <div class="mb-3">
-            <label class="form-label">Special Day</label>
-            <input class="form-control" type="number" name="SpecialDay"
+        <br>
+        <div>
+            <label class="form-label">Special Day:</label>&nbsp
+            <input class="form-control" type="text" name="SpecialDay"
                 placeholder="Enter Special Day value" />
         </div>
-
-        <div class="mb-3">
-            <label class="form-label">Month</label>
+        <br>
+        <div>
+            <label class="form-label">Month:</label>&nbsp
             <select class="form-control" name="Month" placeholder="Select Month" required>
                 <option class="placeholder" selected disabled value="">Select Month</option>
                 <option value="Jan">
@@ -98,29 +105,33 @@
                 </option>
             </select>
         </div>
-        
-        <div class="mb-3">
-            <label class="form-label">Operating Systems</label>
+        <br>
+        <div>
+            <label class="form-label">Operating Systems:</label>&nbsp
             <input class="form-control" type="number" name="OperatingSystems"
-                placeholder="Select Operating Systems value" min='1' max='13' />
+                placeholder="" min='1' max='13' />
         </div>
-        <div class="mb-3">
-            <label class="form-label">Browser</label>
+        <br>
+        <div>
+            <label class="form-label">Browser:</label>&nbsp
             <input class="form-control" type="number" name="Browser"
-                placeholder="Select Browser value" min='1' max='8' />
+                placeholder="" min='1' max='8' />
         </div>
-        <div class="mb-3">
-            <label class="form-label">Region</label>
+        <br>
+        <div>
+            <label class="form-label">Region:</label>&nbsp
             <input class="form-control" type="number" name="Region"
-                placeholder="Select Region value" min='1' max='9' />
+                placeholder="" min='1' max='9' />
         </div>
-        <div class="mb-3">
-            <label class="form-label">Traffic Type</label>
+        <br>
+        <div>
+            <label class="form-label">Traffic Type:</label>&nbsp
             <input class="form-control" type="number" name="TrafficType"
-                placeholder="Select Traffic Type value" min='1' max='20' />
+                placeholder="" min='1' max='20' />
         </div>
-        <div class="mb-3">
-            <label class="form-label">Visitor Type</label>
+        <br>
+        <div>
+            <label class="form-label">Visitor Type:</label>&nbsp
             <select class="form-control" name="VisitorType" placeholder="Select Visitor Type" required>
                 <option class="placeholder" selected disabled value="">Select Visitor Type</option>
                 <option value="New_Visitor">
@@ -134,8 +145,9 @@
                 </option>
             </select>
         </div>
-        <div class="mb-3">
-            <label class="form-label">Weekend</label>
+        <br>
+        <div>
+            <label class="form-label">Weekend:</label>&nbsp
             <select class="form-control" name="Weekend" placeholder="Weekend" required>
                 <option class="placeholder" selected disabled value="">Weekend</option>
                 <option value="False">
@@ -146,12 +158,19 @@
                 </option>
             </select>
         </div>
-        <div class="mb-3">
+        <br><br>
+        <div>
             <input class="btn btn-primary" type="submit" value="Predict Online Shopper Intention" required />
         </div>
     </form>
+    <script>
+        var input = document.querySelectorAll('input');
+        for(i=0; i<input.length; i++){
+            input[i].setAttribute('size',input[i].getAttribute('placeholder').length);
+        }
+    </script>
     <h2>
-       The prediction is {{results}}
+       Online Shopper Purchase Intention Prediction: {{results}}
     </h2>
    <body>
 </html>
