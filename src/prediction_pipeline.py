@@ -87,6 +87,7 @@ class FormData:
                 "VisitorType": [self.VisitorType],
                 "Weekend": [self.Weekend]
             }
+            logging.info("Returning form data as a dataframe.")
             return pd.DataFrame(input_data_dict)
 
         except Exception as e:
