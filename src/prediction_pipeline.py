@@ -18,12 +18,12 @@ class PredictionPipeline:
             preprocessor = load_object_from_pkl_file(preprocessor_path)
             logging.info("Model and preprocessor loaded.")
             logging.info("Preprocessing input data.")
-            data_scaled = preprocessor.transform(features)
+            transformeddata = preprocessor.transform(features)
             logging.info("Preprocessing input data completed.")
             logging.info("Model prediction on input features.")
-            preds = model.predict(data_scaled)
+            prediction = model.predict(transformeddata)
             logging.info("Model prediction completed.")
-            return preds
+            return prediction
         
         except Exception as e:
             raise CustomException(e,sys)
